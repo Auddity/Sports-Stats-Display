@@ -20,7 +20,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: red;
+        // background-color: red;
+        background-image: conic-gradient(blue 100deg, red 100deg);
+        // For hard stops the previous and next color must have the same degree
         height: 100%;
         width: 100%;
         border-radius: 50%;
@@ -33,7 +35,7 @@
           background-color: #a0a0a0;
         }
       }
-  }
+    }
 
   }
 }

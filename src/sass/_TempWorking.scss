@@ -1,6 +1,39 @@
 .Working {
-  height: 100%;
+  width: 100%;
   text-align: center;
   background-color: #333;
   color: #f1f1f1;
+  
+  .container {
+    height: 100%;
+    display: grid;
+    align-content: center;
+    
+    .circle-container {
+      height: 30rem;
+      width: 30rem;
+      background-color: green;
+      margin-inline: auto;
+
+      // Conical Gradient Goes here!
+      .circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        
+        &-center {
+          height: 65%;
+          width: 65%;
+          // margin-inline: auto;
+          border-radius: 50%;
+          background-color: #a0a0a0;
+        }
+      }
+  }
+
+  }
 }

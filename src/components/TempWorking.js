@@ -3,9 +3,16 @@ import '../sass/_TempWorking.scss'
 function TempWorking() {
   return (
     <main className="Working">
+      <h1>Construct Display Elements</h1>
       <div className="container">
-        <h1>Construct Display Elements</h1>
+        <div className="circle-container">
+          <div className="circle">
 
+            <div className="circle-center">
+
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   )

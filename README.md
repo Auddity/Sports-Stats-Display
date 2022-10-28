@@ -10,7 +10,7 @@ The main purpose of which is to push my abilities using API's, Data, React, Fram
 - Display stats data in a unique and interesting way.
 
 ## Latest Update
-- 
+- N/A
 
 ## Previous Updates
 

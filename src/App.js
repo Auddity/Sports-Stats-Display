@@ -1,11 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import './App.scss';
+import TempUnderConst from './components/TempUnderConst';
+import TempWorking from './components/TempWorking'
 
 function App() {
   return (
-    <div className="App">
-      <h1>A New Sports Data Display is Coming</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<TempUnderConst />} />
+      <Route path="tempWorking" element={<TempWorking />} />
+    </Routes>
   );
 }
 

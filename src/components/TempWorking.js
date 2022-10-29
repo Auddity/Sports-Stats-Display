@@ -1,6 +1,6 @@
 import '../sass/_TempWorking.scss'
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useTime } from 'framer-motion'
 
 function TempWorking() {
   const [teamTotalYards, setTeamTotalYards] = useState({
@@ -14,11 +14,14 @@ function TempWorking() {
   // const pieRingStyle = {
   //   backgroundImage: `conic-gradient(from 50deg, blue ${gradientBreak}deg, red ${gradientBreak}deg)`
   // }
+  // const time = useTime();
+  // const timing = useTransform(time, [0, 500], [100, gradientBreak], { clamp: false })
 
   const fillAnimation = {
-    initial: {backgroundImage: `conic-gradient(blue ${250}deg, red ${250}deg)`},
-    animate: {backgroundImage: `conic-gradient(blue ${gradientBreak}deg, red ${gradientBreak}deg)`}
+    initial: {backgroundImage: `conic-gradient(from ${0}deg, blue ${0}deg, red ${0}deg)`},
+    animate: {backgroundImage: `conic-gradient(from ${50}deg, blue ${gradientBreak}deg, red ${gradientBreak}deg)`}
   }
+  // https://www.framer.com/docs/use-transform/
 
   return (
     <main className="Working">
@@ -29,15 +32,16 @@ function TempWorking() {
         <div className="circle-container">
           <motion.div 
             className="circle" 
-            // style={pieRingStyle}
             variants={fillAnimation}
             initial='initial'
             animate='animate'
+            transition={{
+              type: "spring", 
+              duration: 2,
+              repeat: Infinity
+            }}
           >
-
-            <div className="circle-center">
-
-            </div>
+            <div className="circle-center"></div>
           </motion.div>
         </div>
       {/* Circle Chart End */}

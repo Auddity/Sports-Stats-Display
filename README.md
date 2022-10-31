@@ -6,6 +6,8 @@ This project is a personal project to add to my portfolio.
 
 The main purpose of which is to push my abilities using API's, Data, React, Framer Motion, Css (Sass), and JavaScript.
 
+Another goal is to learn and apply Redux
+
 ## Project Goals
 - Display stats data in a unique and interesting way.
 

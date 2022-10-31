@@ -9,38 +9,66 @@
     display: grid;
     align-content: center;
     
-    .circle-container {
+    
+    .circle-stat-display-container {
+      position: relative;
+      width: 42rem;
       height: 30rem;
-      width: 30rem;
-      background-color: transparent;
+      background-color: rgb(99, 99, 75);
       margin-inline: auto;
-
-      // Conical Gradient Goes here!
-      .circle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        // background-image: conic-gradient(from 100deg, blue 100deg, red 100deg);
+      
+      .circle-container {
+        height: 30rem;
+        width: 30rem;
+        background-color: #fefefe;
+        margin-inline: auto;
         
-        // For hard stops the previous and next color must have the same degree
-
-        // For this to look the way I want, the second color, has to be the color of the team with more yards
-
-        // And the degree after each color has to be the lowest yardage of the two teams
-        
-        height: 100%;
-        width: 100%;
-        border-radius: 50%;
-        
-        &-center {
-          height: 65%;
-          width: 65%;
-          // margin-inline: auto;
+        // Conical Gradient Goes here!
+        .circle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          // background-image: conic-gradient(from 100deg, blue 100deg, red 100deg);
+          
+          // For hard stops the previous and next color must have the same degree
+          
+          // For this to look the way I want, the second color, has to be the color of the team with more yards
+          
+          // And the degree after each color has to be the lowest yardage of the two teams
+          
+          height: 100%;
+          width: 100%;
           border-radius: 50%;
-          background-color: #333;
+          
+          &-center {
+            height: 65%;
+            width: 65%;
+            // margin-inline: auto;
+            border-radius: 50%;
+            background-color: #333;
+          }
         }
       }
-    }
 
+      .stat-display {
+        position: absolute;
+        width: 6rem;
+        height: 3rem;
+        color: black;
+        font-weight: bold;
+        background-color: aquamarine;
+      }
+      .away-team-stat {
+        bottom: 6rem;
+        right: 0;
+      }
+      .home-team-stat {
+        top: 6rem;
+        left: 0;
+
+      }
+    }
+  
   }
+
 }

@@ -14,13 +14,13 @@
       position: relative;
       width: 42rem;
       height: 30rem;
-      background-color: rgb(99, 99, 75);
+      // background-color: rgb(99, 99, 75);
       margin-inline: auto;
       
       .circle-container {
         height: 30rem;
         width: 30rem;
-        background-color: #fefefe;
+        // background-color: #fefefe;
         margin-inline: auto;
         
         // Conical Gradient Goes here!
@@ -54,17 +54,18 @@
         position: absolute;
         width: 6rem;
         height: 3rem;
-        color: black;
+        color: white;
+        font-size: 2.5rem;
         font-weight: bold;
-        background-color: aquamarine;
+        // background-color: aquamarine;
       }
       .away-team-stat {
         bottom: 6rem;
-        right: 0;
+        right: 1.3rem;
       }
       .home-team-stat {
         top: 6rem;
-        left: 0;
+        left: 1.3rem;
 
       }
     }

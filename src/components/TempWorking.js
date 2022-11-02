@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 
 function TempWorking() {
   const [teamTotalYards, setTeamTotalYards] = useState({
-    home: 444,
-    away: 229,
+    home: 514,
+    away: 439,
   });
   const [displayYards, setDisplayYards] = useState({
     home: 0,
@@ -23,24 +23,29 @@ function TempWorking() {
   // https://www.framer.com/docs/use-transform/
 
   useEffect(() => {
+    let increment = 4;
+
     let homeStart = 0
-    const homeEnd = teamTotalYards.home
-    if(homeStart === homeEnd) return
+    const hE = teamTotalYards.home
+
+    if(homeStart === hE) return
     let homeCount = setInterval(() => {
-      homeStart += 1
+      if(teamTotalYards.home > 400 ? increment = 6 : increment = 4)
+      homeStart += increment
 
       setDisplayYards(prev => ({
         ...prev,
         home: prev.home = homeStart
       }))
-      if(homeStart === homeEnd) clearInterval(homeCount)
+      if(homeStart >= hE) clearInterval(homeCount)
     }, 10)
 
     let awayStart = 0
     let aE = teamTotalYards.away
     if(awayStart === aE) return
     let aC = setInterval(() => {
-      awayStart += 1
+      if(teamTotalYards.away > 400 ? increment = 6 : increment = 4)
+      awayStart += increment
       setDisplayYards(prev => ({
         ...prev,
         away: prev.away = awayStart
@@ -75,8 +80,12 @@ function TempWorking() {
             </motion.div>
           </div>
             {/* Stats value display (absolute) */}
-            <div className="home-team-stat stat-display">{displayYards.home}</div>
-            <div className="away-team-stat stat-display">{displayYards.away}</div>
+            <div className="home-team-stat stat-display">
+              {displayYards.home > teamTotalYards.home ? teamTotalYards.home : displayYards.home}
+            </div>
+            <div className="away-team-stat stat-display">
+              {displayYards.away > teamTotalYards.away ? teamTotalYards.away : displayYards.away}
+            </div>
 
         </div>
       {/* Circle Chart End */}

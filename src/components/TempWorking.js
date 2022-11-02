@@ -1,21 +1,20 @@
 import '../sass/_TempWorking.scss'
-import { useState } from 'react'
-import { motion, useTime } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 function TempWorking() {
   const [teamTotalYards, setTeamTotalYards] = useState({
-    home: 300,
+    home: 444,
     away: 229,
   });
+  const [displayYards, setDisplayYards] = useState({
+    home: 0,
+    away: 0
+  })
+
   
   const gameTotal = teamTotalYards.home + teamTotalYards.away
   const gradientBreak = teamTotalYards.away * 360 / gameTotal
-
-  // const pieRingStyle = {
-  //   backgroundImage: `conic-gradient(from 50deg, blue ${gradientBreak}deg, red ${gradientBreak}deg)`
-  // }
-  // const time = useTime();
-  // const timing = useTransform(time, [0, 500], [100, gradientBreak], { clamp: false })
 
   const fillAnimation = {
     initial: {backgroundImage: `conic-gradient(from ${0}deg, blue ${0}deg, red ${0}deg)`},
@@ -23,24 +22,38 @@ function TempWorking() {
   }
   // https://www.framer.com/docs/use-transform/
 
-  // console.log(teamTotalYards.home, teamTotalYards.away)
-  const countUp = () => {
-    let display = 0;
-    let count = 0
-    setInterval(() => {
-      while(count <= teamTotalYards.home) {
-        display = count
-        count++
-        console.log(display);
-        return display;
-      }
-    }, 100);
-  }
+  useEffect(() => {
+    let homeStart = 0
+    const homeEnd = teamTotalYards.home
+    if(homeStart === homeEnd) return
+    let homeCount = setInterval(() => {
+      homeStart += 1
 
-  // countUp();
+      setDisplayYards(prev => ({
+        ...prev,
+        home: prev.home = homeStart
+      }))
+      if(homeStart === homeEnd) clearInterval(homeCount)
+    }, 10)
+
+    let awayStart = 0
+    let aE = teamTotalYards.away
+    if(awayStart === aE) return
+    let aC = setInterval(() => {
+      awayStart += 1
+      setDisplayYards(prev => ({
+        ...prev,
+        away: prev.away = awayStart
+      }))
+      if(awayStart === aE) clearInterval(aC)
+    }, 10)
+
+  },[teamTotalYards.home, teamTotalYards.away])
+
 
   return (
-    <main className="Working">
+    <main className="Working"
+    >
       <h1>Construct Display Elements</h1>
       <div className="container">
 
@@ -56,15 +69,14 @@ function TempWorking() {
               transition={{
                 type: "spring", 
                 duration: 2,
-                repeat: Infinity
               }}
               >
               <div className="circle-center"></div>
             </motion.div>
           </div>
             {/* Stats value display (absolute) */}
-            <div className="home-team-stat stat-display">{countUp}</div>
-            <div className="away-team-stat stat-display">{}</div>
+            <div className="home-team-stat stat-display">{displayYards.home}</div>
+            <div className="away-team-stat stat-display">{displayYards.away}</div>
 
         </div>
       {/* Circle Chart End */}

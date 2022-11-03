@@ -1,8 +1,13 @@
-.Working {
+.CircleGraph {
   width: 100%;
+  height: 100vh;
   text-align: center;
   background-color: #333;
   color: #f1f1f1;
+
+  h1 {
+    color: white;
+  }
   
   .container {
     height: 100%;

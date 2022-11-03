@@ -16,7 +16,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  main {
-    height: 100vh;
+  h1 {
+    padding-block-start: 4rem;
+    font-size: 3.5rem;
+  }
+  
+  .container {
+    height: 100%;
+    display: grid;
+    align-content: center;
   }
 }

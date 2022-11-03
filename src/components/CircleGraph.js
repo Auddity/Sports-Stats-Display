@@ -1,11 +1,11 @@
-import '../sass/_TempWorking.scss'
+import '../sass/_CircleGraph.scss'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-function TempWorking() {
+function CircleGraph() {
   const [teamTotalYards, setTeamTotalYards] = useState({
-    home: 514,
-    away: 439,
+    home: 433,
+    away: 285,
   });
   const [displayYards, setDisplayYards] = useState({
     home: 0,
@@ -55,16 +55,13 @@ function TempWorking() {
 
   },[teamTotalYards.home, teamTotalYards.away])
 
-
   return (
-    <main className="Working"
+    <article className="CircleGraph"
     >
-      <h1>Construct Display Elements</h1>
+      <h1>Circle Graph</h1>
       <div className="container">
-
         {/* Circle Chart start */}
         <div className="circle-stat-display-container">
-
           <div className="circle-container">
             <motion.div 
               className="circle" 
@@ -97,8 +94,8 @@ function TempWorking() {
       {/* Tree Map End  */}
 
       </div>
-    </main>
+    </article>
   )
 }
 
-export default TempWorking
+export default CircleGraph

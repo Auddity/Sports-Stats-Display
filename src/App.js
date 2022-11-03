@@ -1,13 +1,15 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.scss';
-import TempUnderConst from './components/TempUnderConst';
-import TempWorking from './components/TempWorking'
+import TempLanding from './components/TempLanding';
+import CircleGraph from './components/CircleGraph'
+import TreeMap from './components/TreeMap';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<TempUnderConst />} />
-      <Route path="tempWorking" element={<TempWorking />} />
+      <Route path="/" element={<TempLanding />} />
+      <Route path="CircleGraph" element={<CircleGraph />} />
+      <Route path="TreeMap" element={<TreeMap />} />
     </Routes>
   );
 }

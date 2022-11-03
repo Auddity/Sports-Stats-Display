@@ -1,6 +1,27 @@
 .TreeMap {
+  background-color: cadetblue;
+  width: 100%;
+  height: 100vh;
 
   &-display-container {
     background-color: goldenrod;
+    width: 88%;
+    margin-inline: auto;
+
+    .box-container {
+      display: flex;
+      align-self: center;
+      // justify-content: center;
+      flex-wrap: wrap;
+
+
+      .playerBox {
+        border: 1px solid black;
+        // width: 100%
+        flex-basis: 33.3%;
+        height: 6.5rem;
+      }
+    }
+
   }
 }

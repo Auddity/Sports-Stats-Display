@@ -10,11 +10,10 @@ function TreeMap() {
     {name: 'mckenzie', yards: 8}
   ])
 
-  const yardageTotal = () => {
-    return rushingStats.map(obj => obj.yards).reduce((prev, curr) => prev + curr)
-  }
+  const yardageTotal = rushingStats.map(obj => obj.yards).reduce((prev, curr) => prev + curr)
+  const percents = rushingStats.map(obj => obj.yards).map(value => Math.round(value / yardageTotal * 100))
 
-  console.log(yardageTotal());
+  console.log(percents);
 
   return (
     <article className="TreeMap">

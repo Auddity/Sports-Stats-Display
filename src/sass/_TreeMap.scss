@@ -4,22 +4,36 @@
   height: 100vh;
 
   &-display-container {
-    background-color: goldenrod;
-    width: 88%;
+    // width: auto;
     margin-inline: auto;
-
+    
     .box-container {
-      display: flex;
-      align-self: center;
-      // justify-content: center;
-      flex-wrap: wrap;
-
-
+      height: auto;
+      width: 40rem;
+      display: inline-block;
+      // align-self: center;
+      // flex-wrap: wrap;
+      
       .playerBox {
-        border: 1px solid black;
-        // width: 100%
-        flex-basis: 33.3%;
-        height: 6.5rem;
+        position: relative;
+        border: 1px solid rgb(127, 91, 1);
+        background-color: goldenrod;
+        width: 50%;
+        // max-width: 100%;
+        min-height: 10rem;
+
+        .player-yards, .player-name {
+          position: absolute;
+          font-size: 1.3rem;
+        }
+
+        .player-yards {
+          inset: 2rem 2rem;
+        }
+        .player-name {
+          right: .5rem;
+          bottom: .5rem;
+        }
       }
     }
 

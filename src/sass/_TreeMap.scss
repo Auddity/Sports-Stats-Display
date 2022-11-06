@@ -8,19 +8,36 @@
     margin-inline: auto;
     
     .box-container {
-      height: auto;
+      // height: 40rem;
       width: 40rem;
-      display: inline-block;
-      // align-self: center;
-      // flex-wrap: wrap;
-      
+      display: flex;
+      align-self: center;
+      flex-wrap: wrap;
+
       .playerBox {
         position: relative;
         border: 1px solid rgb(127, 91, 1);
         background-color: goldenrod;
-        width: 50%;
+        // flex-basis: 33%;
+        min-width: 8rem;
         // max-width: 100%;
-        min-height: 10rem;
+        // min-height: 10rem;
+
+        &:first-child {
+          background-color: aquamarine;
+          // flex-grow: 2;
+          width: 50%;
+          // flex: 33% 2 0
+        }
+        &:nth-child(2) {
+          // flex: 33% 
+        }
+        &:nth-child(3) {
+          // flex: 0 1 0
+        }
+        &:nth-child(4) {
+          
+        }
 
         .player-yards, .player-name {
           position: absolute;
@@ -29,7 +46,14 @@
 
         .player-yards {
           inset: 2rem 2rem;
+          font-size: 1.8rem;
+          font-weight: bold;
+
+          // &:nth-child(2) {
+          //   flex-shrink: 1;
+          // }
         }
+
         .player-name {
           right: .5rem;
           bottom: .5rem;

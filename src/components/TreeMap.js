@@ -10,25 +10,10 @@ function TreeMap() {
     {name: 'moss', yards: 91},
     {name: 'mckenzie', yards: 8}
   ])
-  const [sizeValues, setSizeValues] = useState(0)
-  // const ref = useRef(null)
-  const refC = useRef(null)
+  const ref = useRef(null)
 
   const yardageTotal = rushingStats.map(obj => obj.yards).reduce((prev, curr) => prev + curr)
   const percents = rushingStats.map(obj => obj.yards).map(value => Math.round(value / yardageTotal * 100))  //--> [array of values = %]
-
-  let styles = {
-    width: ``
-  }
-
-  useEffect(() => {
-    // setSizeValues(ref.current.clientHeight)
-    // console.log(ref.current.clientHeight);
-    console.log(refC.current.clientHeight);
-  },[])
-
-  console.log(sizeValues);
- 
 
   return (
     <article className="TreeMap">
@@ -36,8 +21,11 @@ function TreeMap() {
       <div className="container">
         <div className="TreeMap-display-container">
       {/* Make Own Component */}
-          <div className="rushing  box-container" ref={refC}>
-            <PlayerBoxes rushingStats={rushingStats} />
+          <div className="rushing  box-container" ref={ref}>
+            <PlayerBoxes 
+              rushingStats={rushingStats} 
+              percents={percents}
+              yardageTotal={yardageTotal}/>
           </div>
 
           <div className="receiving box-container">

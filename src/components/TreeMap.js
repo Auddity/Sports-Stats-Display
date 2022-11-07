@@ -16,32 +16,18 @@ function TreeMap() {
   const ref = useRef(null)
 
   const yardageTotal = rushingStats.map(obj => obj.yards).reduce((prev, curr) => prev + curr)
-  const percents = rushingStats.map(obj => obj.yards).map(value => Math.round(value / yardageTotal * 100))  //--> [array of values = %]
-  // const sizeValues = percents.map(value => Math.round(value * 40 / 100 * 1.5))
-    
-    
-  //   return {
-  //     height: `${Math.round(value * 40 / 100 * 1.5)}rem`,
-  //     // width: `${value * 40 / 100 * 1.5}rem`
-  //   }
-  // })
+  const percents = rushingStats.map(obj => obj.yards).map(value => Math.round(value / yardageTotal * 100))
   const sizeValues = percents.map(value => {
     return {
       height: `${Math.round(value * 40 / 100 * 1.5)}rem`
     }
   })
- console.log(sizeValues);
   
-  useEffect(() => {
+  rushingStats.map((obj, i) => {
     
-    rushingStats.map((obj, i) => {
-      
-      return obj.style = sizeValues[i]
-    })
-    
-  }, [sizeValues])
+    return obj.style = sizeValues[i]
+  })
 
-  console.log(rushingStats);
   return (
     <article className="TreeMap">
       <h1>TreeMap</h1>

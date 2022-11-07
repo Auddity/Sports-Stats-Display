@@ -11,7 +11,6 @@ export const PlayerBoxes = ({ rushingStats }) => {
         key={i}
         className="playerBox"
         style={obj.style}
-        // ref={ref}
         >
           <p className='player-yards'>{obj.yards}</p>
           <p className='player-name'>{obj.name}</p>

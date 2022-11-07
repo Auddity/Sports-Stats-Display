@@ -1,6 +1,8 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useReducer } from 'react'
 import '../sass/_TreeMap.scss'
 import { PlayerBoxes } from './PlayerBoxes.js'
+
+
 
 function TreeMap() {
   const [rushingStats, setRushingStats] = useState([
@@ -10,11 +12,36 @@ function TreeMap() {
     {name: 'moss', yards: 91},
     {name: 'mckenzie', yards: 8}
   ])
+  
   const ref = useRef(null)
 
   const yardageTotal = rushingStats.map(obj => obj.yards).reduce((prev, curr) => prev + curr)
   const percents = rushingStats.map(obj => obj.yards).map(value => Math.round(value / yardageTotal * 100))  //--> [array of values = %]
+  // const sizeValues = percents.map(value => Math.round(value * 40 / 100 * 1.5))
+    
+    
+  //   return {
+  //     height: `${Math.round(value * 40 / 100 * 1.5)}rem`,
+  //     // width: `${value * 40 / 100 * 1.5}rem`
+  //   }
+  // })
+  const sizeValues = percents.map(value => {
+    return {
+      height: `${Math.round(value * 40 / 100 * 1.5)}rem`
+    }
+  })
+ console.log(sizeValues);
+  
+  useEffect(() => {
+    
+    rushingStats.map((obj, i) => {
+      
+      return obj.style = sizeValues[i]
+    })
+    
+  }, [sizeValues])
 
+  console.log(rushingStats);
   return (
     <article className="TreeMap">
       <h1>TreeMap</h1>
@@ -24,8 +51,7 @@ function TreeMap() {
           <div className="rushing  box-container" ref={ref}>
             <PlayerBoxes 
               rushingStats={rushingStats} 
-              percents={percents}
-              yardageTotal={yardageTotal}/>
+            />
           </div>
 
           <div className="receiving box-container">

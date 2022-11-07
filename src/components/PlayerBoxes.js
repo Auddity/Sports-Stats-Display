@@ -1,28 +1,20 @@
 import { useEffect, useRef, useState } from 'react'
 
-export const PlayerBoxes = ({ rushingStats, percents, yardageTotal }) => {
-  const [{ name, yards }] = rushingStats
- 
-  let sizeValues = percents.map(value => {
-    return {
-      height: `${value * 40 / 100 * 1.5}rem`,
-      // width: `${value * 40 / 100 * 1.5}rem`
-    }
-  })
-  console.log(sizeValues);
+export const PlayerBoxes = ({ rushingStats }) => {
+  
 
   return (
 
-    Object.entries(sizeValues).map(([key, style], i) => (
+    rushingStats.map((obj, i) => (
               
       <div 
-        key={key}
+        key={i}
         className="playerBox"
-        style={style}
+        style={obj.style}
         // ref={ref}
         >
-          <p className='player-yards'>{}</p>
-          <p className='player-name'>{}</p>
+          <p className='player-yards'>{obj.yards}</p>
+          <p className='player-name'>{obj.name}</p>
       </div>
     ))
   )

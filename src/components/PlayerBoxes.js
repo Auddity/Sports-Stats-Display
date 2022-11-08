@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 
 export const PlayerBoxes = ({ rushingStats }) => {
-  
+
+  const sortedStats = [].concat(rushingStats).sort((a, b) => {
+    return b.yards - a.yards
+  })
 
   return (
 
-    rushingStats.map((obj, i) => (
+    sortedStats.map((obj, i) => (
               
       <div 
         key={i}

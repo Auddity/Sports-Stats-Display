@@ -6,11 +6,12 @@ import { PlayerBoxes } from './PlayerBoxes.js'
 
 function TreeMap() {
   const [rushingStats, setRushingStats] = useState([
-    {name: 'singletary', yards: 323},
-    {name: 'allen', yards: 306},
-    {name: 'cook', yards: 132},
-    {name: 'moss', yards: 91},
-    {name: 'mckenzie', yards: 8}
+    {name: 'singletary', yards: 79},
+    {name: 'allen', yards: 267},
+    {name: 'cook', yards: 890},
+    {name: 'bretz', yards: 14},
+    {name: 'moss', yards: 654},
+    {name: 'mckenzie', yards: 80}
   ])
   
   const ref = useRef(null)
@@ -19,12 +20,12 @@ function TreeMap() {
   const percents = rushingStats.map(obj => obj.yards).map(value => Math.round(value / yardageTotal * 100))
   const sizeValues = percents.map(value => {
     return {
-      height: `${Math.round(value * 40 / 100 * 1.5)}rem`
+      width: `${Math.round(value * 40 / 100 * 2)}rem`,
+      height: `${Math.round(value * 40 / 100 * 1.2)}rem`
     }
   })
   
   rushingStats.map((obj, i) => {
-    
     return obj.style = sizeValues[i]
   })
 

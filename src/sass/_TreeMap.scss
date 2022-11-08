@@ -12,7 +12,8 @@
       width: 40rem;
       display: flex;
       align-self: center;
-      flex-wrap: wrap;
+      flex-wrap: wrap-reverse;
+      background-color: #9f9f9f;
 
       .playerBox {
         position: relative;
@@ -21,13 +22,18 @@
         // flex-basis: 33%;
         min-width: 8rem;
         // max-width: 100%;
-        // min-height: 10rem;
+        min-height: 10rem;
 
         &:first-child {
           background-color: aquamarine;
           // flex-grow: 2;
-          width: 50%;
-          // flex: 33% 2 0
+          // width: 50%;
+          
+          flex: 100% 0 0;
+        }
+
+        &:nth-child(2) {
+          flex-grow: 2;
         }
 
         .player-yards, .player-name {

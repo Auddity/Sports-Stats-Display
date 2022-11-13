@@ -1,6 +1,6 @@
 # Sports Stats
 Live Site: N/A
-Last Updated:  N/A
+Last Updated:  11/13/22
 
 This project is a personal project to add to my portfolio.
 
@@ -12,7 +12,7 @@ Another goal is to learn and apply Redux
 - Display stats data in a unique and interesting way.
 
 ## Latest Update
-- N/A
+- Implemented treemap squarify
 
 ## Previous Updates
 

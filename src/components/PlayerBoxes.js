@@ -3,42 +3,48 @@ const { getTreemap } = require('treemap-squarify')
 
 export const PlayerBoxes = ({ rushingStats }) => {
 
-  const sortedStats = [].concat(rushingStats).sort((a, b) => {
-    return b.yards - a.yards
-  })
+  rushingStats = [].concat(rushingStats.sort((a, b) => {
+    return a.yards - b.yards
+  }))
 
-  // TODO: take rushing stats and turn it into the array of objects below
+  const squareFormat = rushingStats.map((obj, i) => {
+    return {
+      value: obj.yards,
+      color: '#00338D',
+      label: obj.name
+    }
+  })
 
   const result = getTreemap({
     data: [
-      {value: 79},
-      {value: 267},
-      {value: 860},
-      {value: 14},
-      {value: 654},
-      {value: 80},
+      ...squareFormat
     ],
     width: 400,
     height: 460,
   })
 
-  console.log(result);
-  // TODO: Get result data into the map component
-  // x & y, so position absolute inside the container
-  // width & height are exactly that.
+  // console.log(result);
+
   // TODO: Pass in colors to the data above
+  const colors = ['hsl(348, 80%, 56%)', 'hsl(348, 83%, 51%)', 'hsl(348, 86%, 46%)', 'hsl(348, 89%, 41%)', 'hsl(348, 93%, 36%)', 'hsl(348, 96%, 31%)']
 
   return (
 
-    sortedStats.map((obj, i) => (
+    result.map((obj, i) => (
               
       <div 
         key={i}
         className="playerBox"
-        style={obj.style}
+        style={{
+          top: obj.y,
+          left: obj.x,
+          height: obj.height,
+          width: obj.width,
+          backgroundColor: colors[i]
+        }}
         >
-          <p className='player-yards'>{obj.yards}</p>
-          <p className='player-name'>{obj.name}</p>
+          <p className='player-yards'>{obj.data.value}</p>
+          <p className='player-name'>{obj.data.label}</p>
       </div>
     ))
   )

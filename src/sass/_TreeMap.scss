@@ -1,64 +1,45 @@
+* {
+  $lightThree: hsl(348, 80%, 56%);
+  $lightTwo: hsl(348, 83%, 51%);
+  $lightOne: hsl(348, 86%, 46%);
+  $mainColor: hsl(348, 89%, 41%);
+  $darkOne: hsl(348, 93%, 36%);
+  $darkTwo: hsl(348, 96%, 31%);
+}
+
 .TreeMap {
   background-color: cadetblue;
   width: 100%;
   height: 100vh;
 
   &-display-container {
-    // width: auto;
-    margin-inline: auto;
     
     .box-container {
-      // height: 40rem;
+      position: relative;
+      height: 46rem;
       width: 40rem;
-      display: flex;
-      align-self: center;
-      flex-wrap: wrap-reverse;
+      margin-inline: auto;
       background-color: #9f9f9f;
-
+      
       .playerBox {
-        position: relative;
+        position: absolute;
         border: 1px solid rgb(127, 91, 1);
-        background-color: goldenrod;
-        // flex-basis: 33%;
-        min-width: 8rem;
-        // max-width: 100%;
-        min-height: 8rem;
-
-        &:first-child {
-          background-color: aquamarine;
-          // flex-grow: 2;
-          // width: 50%;
-          
-          flex: 100% 0 0;
-        }
-
-        &:nth-child(2) {
-          // flex-basis: 66%;
-          flex-grow: 2;
-        }
-
-        &:nth-child(3) {
-          
-        }
-
+        // background-color: goldenrod;
+        
         .player-yards, .player-name {
-          position: absolute;
           font-size: 1.3rem;
         }
 
         .player-yards {
-          inset: 2rem 2rem;
-          font-size: 1.8rem;
+          inset: 5rem 2rem;
+          font-size: 2.8rem;
           font-weight: bold;
-
-          // &:nth-child(2) {
-          //   flex-shrink: 1;
-          // }
         }
 
         .player-name {
-          right: .5rem;
-          bottom: .5rem;
+          // right: .5rem;
+          // bottom: .5rem;
+          // font-size: 2;
         }
       }
     }

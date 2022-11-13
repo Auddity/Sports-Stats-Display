@@ -22,7 +22,7 @@
         // flex-basis: 33%;
         min-width: 8rem;
         // max-width: 100%;
-        min-height: 10rem;
+        min-height: 8rem;
 
         &:first-child {
           background-color: aquamarine;
@@ -33,7 +33,12 @@
         }
 
         &:nth-child(2) {
+          // flex-basis: 66%;
           flex-grow: 2;
+        }
+
+        &:nth-child(3) {
+          
         }
 
         .player-yards, .player-name {

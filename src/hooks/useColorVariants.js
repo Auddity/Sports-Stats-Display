@@ -3,11 +3,14 @@ import { useState, useEffect } from 'react';
 const useColorVariants = (baseColor, objs) => {
   const [sat, setSat] = useState([]);
   const [light, setLight] = useState([]);
+  const [textColor, setTextColor] = useState('');
+  let colorArray = [];
 
   const mean = Math.round(objs.length / 2);
+  const colorStart = baseColor.slice(0, -9);
 
   useEffect(() => {
-    let satBase = parseInt(baseColor.slice(-9, -7));
+    let satBase = parseInt(baseColor.slice(-10, -7));
     let lightBase = parseInt(baseColor.slice(-4, -2));
 
     const getSaturation = () => {
@@ -35,24 +38,17 @@ const useColorVariants = (baseColor, objs) => {
 
     getSaturation();
     getLightness();
+
+    console.log(lightBase);
+
+    setTextColor(lightBase < 11 ? 'white' : 'black');
   }, [baseColor, mean, objs.length]);
 
-  const colorStart = baseColor.slice(0, -9);
-  let colorArray = [];
   objs.forEach((_, i) => {
     colorArray.push(`${colorStart}${sat[i]}%, ${light[i]}%)`);
   });
 
-  return { colorArray };
+  return { colorArray, textColor };
 };
 
 export default useColorVariants;
-
-// const colors = [
-//   'hsl(348, 80%, 56%)',
-//   'hsl(348, 83%, 51%)',
-//   'hsl(348, 86%, 46%)',
-//   'hsl(348, 89%, 41%)',
-//   'hsl(348, 93%, 36%)',
-//   'hsl(348, 96%, 31%)',
-// ];

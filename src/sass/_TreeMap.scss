@@ -1,10 +1,13 @@
 * {
-  $lightThree: hsl(348, 80%, 56%);
-  $lightTwo: hsl(348, 83%, 51%);
-  $lightOne: hsl(348, 86%, 46%);
-  $mainColor: hsl(348, 89%, 41%);
-  $darkOne: hsl(348, 93%, 36%);
-  $darkTwo: hsl(348, 96%, 31%);
+  $bills: hsl(348, 89%, 41%);
+  $pittsburgh: hsl(42, 100%, 54%);
+  $greenBay: hsl(160, 33%, 14%);
+  $jacksonville: hsl(189, 100%, 24%);
+  $seattle: hsl(94, 65%, 45%);
+  $baltimore: hsl(241, 58%, 24%);
+  $miami: hsl(184, 100%, 30%);
+  $Minnesota: hsl(266, 55%, 33%);
+  $chicago: hsl(16, 97%, 40%);
 }
 
 .TreeMap {
@@ -25,6 +28,7 @@
 
       .playerBox {
         position: absolute;
+        color: black;
         border: 1px solid black;
 
         .player-yards {

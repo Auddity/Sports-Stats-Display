@@ -4,13 +4,14 @@ import { PlayerBoxes } from './PlayerBoxes.js';
 
 function TreeMap() {
   const [rushingStats, setRushingStats] = useState([
-    { name: 'harold', yards: 590 },
+    { name: 'harold', yards: 910 },
     { name: 'singletary', yards: 394 },
     { name: 'allen', yards: 476 },
     { name: 'cook', yards: 169 },
-    { name: 'johnson', yards: 4 },
+    { name: 'johnson', yards: 891 },
     { name: 'moss', yards: 91 },
     { name: 'mckenzie', yards: 35 },
+    { name: 'alfredson', yards: 235 },
   ]);
 
   return (

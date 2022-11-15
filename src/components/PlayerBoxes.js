@@ -1,5 +1,5 @@
 import { getTreemap } from 'treemap-squarify';
-import useColorVariants from '../hooks/useColorVariants';
+import useGradientCreator from '../hooks/useGradientCreator';
 
 export const PlayerBoxes = ({ rushingStats }) => {
   rushingStats = [].concat(
@@ -21,8 +21,8 @@ export const PlayerBoxes = ({ rushingStats }) => {
     height: 460,
   });
 
-  const { colorArray, textColor } = useColorVariants(
-    'hsl(348, 89%, 41%)',
+  const { colorArray, textColor } = useGradientCreator(
+    'hsl(94, 65%, 45%)',
     rushingStats
   );
 

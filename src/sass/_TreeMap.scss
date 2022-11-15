@@ -23,23 +23,16 @@
       
       .playerBox {
         position: absolute;
-        border: 1px solid rgb(127, 91, 1);
-        // background-color: goldenrod;
-        
-        .player-yards, .player-name {
-          font-size: 1.3rem;
-        }
+        border: 1px solid black;
+      
 
         .player-yards {
-          inset: 5rem 2rem;
           font-size: 2.8rem;
           font-weight: bold;
         }
 
         .player-name {
-          // right: .5rem;
-          // bottom: .5rem;
-          // font-size: 2;
+          font-size: 2;
         }
       }
     }

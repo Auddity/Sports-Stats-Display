@@ -1,5 +1,5 @@
 import '../sass/_TreeMap.scss'
-import { useEffect, useState, useReducer } from 'react'
+import { useState } from 'react'
 import { PlayerBoxes } from './PlayerBoxes.js'
 
 function TreeMap() {
@@ -11,19 +11,6 @@ function TreeMap() {
     {name: 'moss', yards: 91},
     {name: 'mckenzie', yards: 35}
   ])
-  
-  const yardageTotal = rushingStats.map(obj => obj.yards).reduce((prev, curr) => prev + curr)
-  const percents = rushingStats.map(obj => obj.yards).map(value => value / yardageTotal * 100)
-  const sizeValues = percents.map(value => {
-    return {
-      width: `${Math.round(value * 40 / 100 * 2)}rem`,
-      height: `${Math.round(value * 40 / 100 * 1.2)}rem`
-    }
-  })
-  
-  rushingStats.map((obj, i) => {
-    return obj.style = sizeValues[i]
-  })
 
   return (
     <article className="TreeMap">

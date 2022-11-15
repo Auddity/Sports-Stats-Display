@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useColorVariants = (baseColor, objs) => {
+const useGradientCreator = (baseColor, objs) => {
   const [sat, setSat] = useState([]);
   const [light, setLight] = useState([]);
   const [textColor, setTextColor] = useState('');
@@ -51,4 +51,4 @@ const useColorVariants = (baseColor, objs) => {
   return { colorArray, textColor };
 };
 
-export default useColorVariants;
+export default useGradientCreator;

@@ -13,18 +13,19 @@
   height: 100vh;
 
   &-display-container {
-    
     .box-container {
       position: relative;
       height: 46rem;
       width: 40rem;
       margin-inline: auto;
       background-color: #9f9f9f;
-      
+      border: 1px solid black;
+      border-radius: 0.5rem;
+      overflow: hidden;
+
       .playerBox {
         position: absolute;
         border: 1px solid black;
-      
 
         .player-yards {
           font-size: 2.8rem;
@@ -36,6 +37,5 @@
         }
       }
     }
-
   }
 }

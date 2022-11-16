@@ -1,6 +1,7 @@
 # Sports Stats
 
 Live Site: N/A
+
 Last Updated: 11/16/22 - 1:39pm
 
 ## A New Way to Visualize Sports Stats & Data
@@ -25,7 +26,7 @@ Another goal is to learn and apply Redux
 
 - Implemented treemap squarify
 
-## Nest Todos
+## Next Todos
 
 - Set up features (Redux)
 - Build Aside for Leaderboard

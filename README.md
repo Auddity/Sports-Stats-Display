@@ -2,7 +2,7 @@
 
 Live Site: N/A
 
-Last Updated: 11/16/22 - 1:39pm
+Last Updated: 11/16/22 - 3:10pm
 
 ## A New Way to Visualize Sports Stats & Data
 
@@ -18,12 +18,13 @@ Another goal is to learn and apply Redux
 
 ## Latest Update
 
+- Routing, Layout
 - Redux store & Provider
-- Color Variant Custom Hook
-  - text color based on base lightness
 
 ### Previous Updates
 
+- Color Variant Custom Hook
+  - text color based on base lightness
 - Implemented treemap squarify
 
 ## Next Todos

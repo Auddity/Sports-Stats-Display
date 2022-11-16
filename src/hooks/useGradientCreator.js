@@ -7,7 +7,7 @@ const useGradientCreator = (baseColor, objs) => {
   let colorArray = [];
 
   const mean = Math.round(objs.length / 2);
-  const colorStart = baseColor.slice(0, -9);
+  const hslStart = baseColor.slice(0, -9);
 
   useEffect(() => {
     let satBase = parseInt(baseColor.slice(-10, -7));
@@ -45,7 +45,7 @@ const useGradientCreator = (baseColor, objs) => {
   }, [baseColor, mean, objs.length]);
 
   objs.forEach((_, i) => {
-    colorArray.push(`${colorStart}${sat[i]}%, ${light[i]}%)`);
+    colorArray.push(`${hslStart}${sat[i]}%, ${light[i]}%)`);
   });
 
   return { colorArray, textColor };

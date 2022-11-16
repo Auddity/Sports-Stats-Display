@@ -16,8 +16,8 @@ function TreeMap() {
 
   return (
     <article className="TreeMap">
-      <h1>TreeMap</h1>
       <div className="container">
+        <h1>TreeMap</h1>
         <div className="TreeMap-display-container">
           {/* Make Own Component */}
           <div className="rushing  box-container">

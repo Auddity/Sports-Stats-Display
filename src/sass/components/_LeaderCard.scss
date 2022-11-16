@@ -1,0 +1,45 @@
+.LeaderCard {
+  width: 90%;
+  text-align: left;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  margin-inline: auto;
+  margin-block: 2rem;
+
+  h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-block: 1rem;
+  }
+
+  .leaderBoard {
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-inline: 1rem;
+      padding-block: 0.5rem;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+
+    &-body {
+      .playerInfo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+
+        &-left {
+          display: flex;
+          align-items: center;
+
+          .name {
+            padding-inline-end: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

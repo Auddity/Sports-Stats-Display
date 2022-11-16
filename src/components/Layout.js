@@ -4,10 +4,10 @@ import Aside from './Aside';
 
 const Layout = () => {
   return (
-    <div>
+    <>
       <Aside />
       <Outlet />
-    </div>
+    </>
   );
 };
 

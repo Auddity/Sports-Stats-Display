@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   players: [],
+  isOpen: true,
   isLoading: true,
 };
 

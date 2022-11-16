@@ -2,7 +2,7 @@
 
 Live Site: N/A
 
-Last Updated: 11/16/22 - 3:10pm
+Last Updated: 11/16/22 - 3:19pm
 
 ## A New Way to Visualize Sports Stats & Data
 
@@ -18,6 +18,7 @@ Another goal is to learn and apply Redux
 
 ## Latest Update
 
+- Slice for Aside
 - Routing, Layout
 - Redux store & Provider
 

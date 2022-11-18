@@ -5,6 +5,7 @@
   border-radius: 0.5rem;
   margin-inline: auto;
   margin-block: 2rem;
+  box-shadow: 0 0 0.8rem rgb(195, 198, 209);
 
   h2 {
     font-size: 1.8rem;
@@ -19,8 +20,8 @@
       justify-content: space-between;
       padding-inline: 1rem;
       padding-block: 0.5rem;
-      border-top: 1px solid #333;
-      border-bottom: 1px solid #333;
+      border-top: 2px solid rgb(195, 198, 209);
+      border-bottom: 2px solid rgb(195, 198, 209);
     }
 
     &-body {

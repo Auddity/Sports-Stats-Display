@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export const useAxiosFetch = dataUrl => {
-  const [data, setData] = useState()
-  const [fetchError, setFetchError] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
+  const [data, setData] = useState();
+  const [fetchError, setFetchError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -14,31 +14,31 @@ export const useAxiosFetch = dataUrl => {
       setIsLoading(true);
       try {
         const response = await axios.get(url, {
-          cancelToken: source.token
-        })
-        if(isMounted) {
+          cancelToken: source.token,
+        });
+        if (isMounted) {
           setData(response.data);
-          setFetchError(null)
+          setFetchError(null);
         }
-      } catch (error) { 
-        if(isMounted) {
-          setFetchError(error.message)
-          setData([])
+      } catch (error) {
+        if (isMounted) {
+          setFetchError(error.message);
+          setData([]);
         }
       } finally {
-        isMounted && setIsLoading(false)
+        isMounted && setIsLoading(false);
       }
-    }
+    };
 
-    fetchData(dataUrl)
-    
+    fetchData(dataUrl);
+
     const cleanUp = () => {
-      isMounted = false
-      source.cancel()
-    }
+      isMounted = false;
+      source.cancel();
+    };
 
-    return cleanUp  
-  }, [dataUrl])
+    return cleanUp;
+  }, [dataUrl]);
 
-  return { data, fetchError, isLoading }
-}
+  return { data, fetchError, isLoading };
+};

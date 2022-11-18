@@ -39,8 +39,6 @@ const useGradientCreator = (baseColor, objs) => {
     getSaturation();
     getLightness();
 
-    console.log(lightBase);
-
     setTextColor(lightBase < 11 ? 'white' : 'black');
   }, [baseColor, mean, objs.length]);
 

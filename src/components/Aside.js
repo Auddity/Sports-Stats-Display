@@ -7,7 +7,7 @@ import axios from 'axios';
 const Aside = () => {
   const { isOpen } = useSelector(store => store.aside);
 
-  const [state, setState] = useState([]);
+  const [passingLeaders, setPassingLeaders] = useState([]);
 
   useEffect(() => {
     const options = {
@@ -18,15 +18,12 @@ const Aside = () => {
     axios
       .request(options)
       .then(response => {
-        setState(response.data);
+        setPassingLeaders(response.data.topPlayers.passingTouchdowns);
       })
       .catch(error => {
         console.log(error);
       });
   }, []);
-
-  console.log(state.topPlayers.passingTouchdowns);
-  const playerList = state.topPlayers.passingTouchdowns;
 
   if (isOpen) {
     return (
@@ -34,9 +31,9 @@ const Aside = () => {
         <h1>Leaderboards</h1>
         <LeaderCard />
         <ul>
-          {playerList.map(obj => {
+          {passingLeaders.map(obj => {
             return (
-              <li key={obj.name.id}>
+              <li key={obj.player.id}>
                 <p>{obj.player.name}</p>
                 <p>{obj.statistics.passingTouchdowns}</p>
               </li>

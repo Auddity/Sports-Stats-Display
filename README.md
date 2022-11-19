@@ -2,7 +2,7 @@
 
 Live Site: N/A
 
-Last Updated: 11/16/22 - 3:19pm
+Last Updated: 11/19/22 - 3:19pm
 
 ## A New Way to Visualize Sports Stats & Data
 
@@ -18,6 +18,7 @@ Another goal is to learn and apply Redux
 
 ## Latest Update
 
+- Backend API call
 - Slice for Aside
 - Routing, Layout
 - Redux store & Provider
@@ -30,9 +31,9 @@ Another goal is to learn and apply Redux
 
 ## Next Todos
 
-- Set up features (Redux)
 - Build Aside for Leaderboard
   - Get Data from API (asyncThunk)
+- Set up features (Redux)
 
 ## Build Steps
 

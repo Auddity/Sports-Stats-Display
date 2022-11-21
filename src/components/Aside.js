@@ -35,6 +35,7 @@ const Aside = () => {
             return (
               <li key={obj.player.id}>
                 <p>{obj.player.name}</p>
+                <p>{obj.team.name}</p>
                 <p>{obj.statistics.passingTouchdowns}</p>
               </li>
             );

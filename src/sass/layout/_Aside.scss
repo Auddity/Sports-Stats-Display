@@ -4,7 +4,13 @@
   top: 0;
   width: 40rem;
   height: 100vh;
-  background-color: white;
+  background-color: hsl(60, 100%, 98%);
   text-align: center;
   z-index: 10;
+
+  ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }

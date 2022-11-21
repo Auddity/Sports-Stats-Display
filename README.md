@@ -2,7 +2,7 @@
 
 Live Site: N/A
 
-Last Updated: 11/19/22 - 3:19pm
+Last Updated: 11/20/22 - 3:19pm
 
 ## A New Way to Visualize Sports Stats & Data
 
@@ -19,6 +19,7 @@ Another goal is to learn and apply Redux
 ## Latest Update
 
 - Backend API call
+  - found current season id
 - Slice for Aside
 - Routing, Layout
 - Redux store & Provider

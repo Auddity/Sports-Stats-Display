@@ -1,29 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import '../sass/layout/_Aside.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { getPassingLeaders } from '../features/aside/asideSlice';
 import LeaderCard from './LeaderCard';
-import axios from 'axios';
 
 const Aside = () => {
-  const { isOpen } = useSelector(store => store.aside);
-
-  const [passingLeaders, setPassingLeaders] = useState([]);
+  const { isOpen, passingLeaders } = useSelector(store => store.aside);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const options = {
-      method: 'GET',
-      url: 'http://localhost:8000/aside',
-    };
-
-    axios
-      .request(options)
-      .then(response => {
-        setPassingLeaders(response.data.topPlayers.passingTouchdowns);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, []);
+    dispatch(getPassingLeaders());
+  }, [dispatch]);
 
   if (isOpen) {
     return (
